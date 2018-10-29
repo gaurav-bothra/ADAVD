@@ -1,0 +1,214 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    
+</head>
+<body>
+<br><br>
+<div class="container">
+<div class="row">
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="ad">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">Young</option>
+      <option value="1">Middle</option>
+      <option value="2">Old</option>
+    </select>
+    <label>Age of Driver</label>
+  </div>
+	</div>
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="et">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">Low</option>
+      <option value="1">Moderate</option>
+      <option value="2">High</option>
+    </select>
+    <label>Engine Temperature</label>
+  </div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="av">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">New</option>
+      <option value="1">Old</option>
+    </select>
+    <label>Age of Vehicle</label>
+  </div>
+	</div>
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="lc">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">Good</option>
+      <option value="1">Bad</option>
+      
+    </select>
+    <label>Light Condition</label>
+  </div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="wc">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">Good</option>
+      <option value="1">Bad</option>
+      <
+    </select>
+    <label>Weather Condition</label>
+  </div>
+	</div>
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="rs">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">Good</option>
+      <option value="1">Bad</option>
+     
+    </select>
+    <label>Road Surface</label>
+  </div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="pf">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+      
+    </select>
+    <label>Part Failure</label>
+  </div>
+	</div>
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="rd">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+      
+    </select>
+    <label>Rush Driving</label>
+  </div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="ac">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+      
+    </select>
+    <label>Alcohol Consumption</label>
+  </div>
+	</div>
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="ed">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">Good</option>
+      <option value="1">Bad</option>
+      
+    </select>
+    <label>Eyes of Driver</label>
+  </div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="hd">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">Good</option>
+      <option value="1">Bad</option>
+      
+    </select>
+    <label>Health of Driver</label>
+  </div>
+	</div>
+	<div class="col s12 m6">
+		<div class="input-field col s12">
+    <select id="tc">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">Good</option>
+      <option value="1">Bad</option>
+      
+    </select>
+    <label>Tyre Condition</label>
+  </div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s12 ">
+		<div class="input-field col s12">
+    <select id="el">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="0">Low</option>
+      <option value="1">Moderate</option>
+      <option value="2">High</option>
+    </select>
+    <label>Engine Load</label>
+  </div>
+	</div>
+	
+</div>
+<div class="row">
+<a class="waves-effect waves-light btn s12" style="display:block;width:100%" onclick="predict()">Predict</a>
+</div>
+</div>
+
+ 
+
+ 
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	
+<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+
+<script>
+ var config = {
+    apiKey: "AIzaSyDkq9vEqI9vtCahiYKH4s-u4XOGyRQL7Ew",
+    authDomain: "karconnect-iot.firebaseapp.com",
+    databaseURL: "https://karconnect-iot.firebaseio.com",
+    projectId: "karconnect-iot",
+    storageBucket: "karconnect-iot.appspot.com",
+    messagingSenderId: "216638538820"
+  };
+  firebase.initializeApp(config);
+  // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
+   $(document).ready(function(){
+   $('select').formSelect();
+  
+  firebase.initializeApp(config);
+   })
+function predict()
+{
+  var token = localStorage.getItem('token');
+  var ref = firebase.database().ref("users").child(token).child("Accident").set({
+	"data" : [[$('#ad'). val(),$('#et'). val(),$('#av'). val(),$('#lc'). val(),$('#wc'). val(),$('#rs'). val(),$('#pf'). val(),$('#rd'). val(),$('#ac'). val(),$('#ed'). val(),$('#hd'). val(),$('#tc'). val(),$('#el'). val()]]
+  })
+  
+console.log($('#lc'). val())
+
+}
+ </script>
+  
+ </body>
+ </html>

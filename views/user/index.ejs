@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-database.js"></script>
+
+    <script>
+        // Initialize Firebase
+        // TODO: Replace with your project's customized code snippet
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDkq9vEqI9vtCahiYKH4s-u4XOGyRQL7Ew",
+            authDomain: "karconnect-iot.firebaseapp.com",
+            databaseURL: "https://karconnect-iot.firebaseio.com",
+            projectId: "karconnect-iot",
+            storageBucket: "karconnect-iot.appspot.com",
+            messagingSenderId: "216638538820"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center">Karconnect</a>
+        </div>
+    </nav>
+    <div class="container">
+        <br /><br /><br /><br />
+        <br />
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="card-panel center-align teal lighten-5">
+                    Hello User!
+                    <ol>
+                        <li>First Login to your account in your mobile device and then refresh this page.</li>
+                        <li>Download the json configuration file.</li>
+                        <li>Place it in the root folder of the application</li>
+                        <%if (isLogin) { %>
+                        <li><a href="/user/getConfig">Link Attached Here</a></li>
+                        <% } %>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<div class="fixed-action-btn">
+  <a class="btn-floating btn-large red" href="/user/ml">
+    <i class="large material-icons">ac_unit</i>
+  </a>
+</div>
+ 
+	  
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+		$(document).ready(function(){
+    $('.fixed-action-btn').floatingActionButton();
+  });
+        $(document).ready(function () {
+            localStorage.setItem('token', "<%= token %>");
+            var userToken = localStorage.getItem("token");
+            
+            setInterval(() => {
+                var ref = firebase.database().ref("users/").child(userToken).child("realtime").child("RPM").set(Math.floor((Math.random() * 10) + 100));
+            }, 1000)
+            
+            navigator.geolocation.watchPosition(onSuccess, onError, {enableHighAccuracy:true,timeout:1000, frequency: 1000});
+            setTimeout(onData, 3000);
+        });
+
+        function onData() {
+            var userToken = localStorage.getItem("token");
+            var ref = firebase.database().ref().child("users").child(userToken).child("previous_val").push({
+                "name":"dsvds"
+            });
+        }
+        function onSuccess(data) {
+            console.log(data);
+            var userToken = localStorage.getItem("token");
+            var ref = firebase.database().ref("users/").child(userToken).child("location").set({
+                "lat": data.coords.latitude,
+                "lgn": data.coords.longitude,
+                "timestamp": data.timestamp
+            })
+        }
+
+        function onError() {
+
+        }
+    </script>
+</body>
+
+</html>

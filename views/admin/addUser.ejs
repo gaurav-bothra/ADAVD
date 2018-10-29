@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center">Karconnect</a>
+        </div>
+    </nav>
+    <div class="container">
+        <br /><br /><br /><br />
+        <br />
+        <div class="row">
+            <div class="col s12">
+                <div class="card-panel center-align teal lighten-5">
+                    <div class="row">
+                        <form class="col s12" action="/admin/addUser" method="POST">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="Enter Name " id="name" name="name" type="text" class="validate">
+                                    <label for="first_name"> Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="Enter Address " id="address" name="address" type="text" class="validate">
+                                    <label for="address">Address</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="input-field col s12">
+                                            <select name="gender">
+                                              <option value="M">Male</option>
+                                              <option value="F">Female</option>
+                                              
+                                            </select>
+                                            <label>Gender</label>
+                                          </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="email" name="email" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="password" name="password" type="password" class="validate">
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Enter HMAC " id="address" name="HMAC" type="text" class="validate">
+                                        <label for="HMAC">HMAC</label>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <button class="waves-effect waves-light btn" type="submit" style="display: block; width: 100%">Submit</a>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>$(document).ready(function(){
+            $('select').formSelect();
+          });</script>
+</body>
+
+</html>

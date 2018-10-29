@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center">Karconnect</a>
+        </div>
+    </nav>
+    <div class="container">
+        <br /><br /><br /><br />
+
+        <div class="row">
+            <div class="col s12 m4 offset-m4">
+                <div class="card-panel center-align">
+                    <h5>Login</h5>
+                    <div class="row">
+                        <form class="col s12" action="/user/login" method="POST">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="Email" name="email" type="email" class="validate">
+                                    <label for="Email">Email</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">lock</i>
+                                    <input id="password" type="password" name="password" class="validate">
+                                    <label for="password">password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button type="submit" class="waves-effect waves-light btn" style="display: block; width: 100%">Login</button>
+                            </div>
+                            <div class="row grey-text text-darken-1">
+                                <a herf="/user/forgot">Forgot Password??</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <%- include partials/_msg.ejs%>
+</body>
+
+</html>

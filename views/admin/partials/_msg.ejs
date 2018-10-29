@@ -1,0 +1,18 @@
+<% if (success.length > 0) { %>
+    <script>
+      console.log("<%=success%>");
+      toastr.success("<%=success%>")
+    </script>
+  <% } %>
+  <% if (error.length > 0) { %>
+    <script>
+      console.log("<%=error%>");
+      toastr.error("<%=error%>")
+    </script>
+  <% } %>
+  <% if (info.length > 0) { %>
+    <script>
+      console.log("<%=info%>");
+      toastr.info("<%=info%>")
+    </script>
+  <% } %>
